@@ -1,0 +1,18 @@
+variable,type,definition
+team_id,string,Team identifier
+calendar_week,date,Week start date (Monday)
+week_index,int,Sequential week index in panel
+adoption_week,float,Team-specific AI adoption week; NaN for never adopters
+treated,int,1 if team-week is on/after adoption week
+post_period,int,Alias of treatment timing for design clarity
+event_time,float,week_index - adoption_week; NaN for never adopters
+total_merged_prs,int,Total merged PRs in team-week
+total_completed_tickets,int,Total completed tickets in team-week
+total_output,int,total_merged_prs + total_completed_tickets
+junior_merged_prs,int,Junior-attributed merged PRs
+junior_completed_tickets,int,Junior-attributed completed tickets
+junior_output,int,junior_merged_prs + junior_completed_tickets
+junior_merged_pr_share,float,junior_merged_prs / total_merged_prs
+junior_ticket_share,float,junior_completed_tickets / total_completed_tickets
+junior_output_share,float,Primary outcome: junior_output / total_output
+analysis_sample,int,1 if sample filter is met (total_output >= 10)

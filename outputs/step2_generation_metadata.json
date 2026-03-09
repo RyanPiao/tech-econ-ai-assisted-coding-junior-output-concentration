@@ -1,0 +1,13 @@
+{
+  "step": "Step 2",
+  "data_type": "Synthetic",
+  "seed": 20260309,
+  "n_teams": 48,
+  "n_weeks": 30,
+  "n_team_week_rows": 1440,
+  "n_team_role_week_rows": 2880,
+  "analysis_sample_rows": 1440,
+  "adoption_rate_realized": 0.7083333333333334,
+  "mean_junior_output_share": 0.5201001749614517,
+  "median_adoption_week": 15.0
+}
