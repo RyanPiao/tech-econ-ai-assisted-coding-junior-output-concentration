@@ -22,8 +22,8 @@ Does team-level adoption of AI coding assistance change how output is distribute
 ## Data type
 Synthetic
 
-## Weekly data-source rotation note
-This cycle defaults to **Synthetic** under the required A/B rotation policy because the prior completed cycle used **Public Real** data.
+## Data note
+This project uses a synthetic dataset for the current research cycle so the design, variables, and empirical workflow can be developed cleanly before any future extension to public real-world data.
 
 ## Repository structure
 ```text
