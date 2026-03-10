@@ -1,0 +1,5 @@
+Step 6 dynamic check (event-study style)
+nobs: 1440
+R-squared: 0.656818
+window: leads -6 to lags +8, reference = -1
+See step6_event_study_coefficients.csv for coefficient-level output.

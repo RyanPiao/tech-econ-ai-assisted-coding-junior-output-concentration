@@ -1,0 +1,165 @@
+[alt_outcome_merged_pr_share]
+                            PanelOLS Estimation Summary                             
+====================================================================================
+Dep. Variable:     junior_merged_pr_share   R-squared:                        0.0086
+Estimator:                       PanelOLS   R-squared (Between):              0.0691
+No. Observations:                    1440   R-squared (Within):               0.0216
+Date:                    Tue, Mar 10 2026   R-squared (Overall):              0.0655
+Time:                            00:21:53   Log-likelihood                    705.64
+Cov. Estimator:                 Clustered                                           
+                                            F-statistic:                      11.838
+Entities:                              48   P-value                           0.0006
+Avg Obs:                           30.000   Distribution:                  F(1,1362)
+Min Obs:                           30.000                                           
+Max Obs:                           30.000   F-statistic (robust):             8.7950
+                                            P-value                           0.0031
+Time periods:                          30   Distribution:                  F(1,1362)
+Avg Obs:                           48.000                                           
+Min Obs:                           48.000                                           
+Max Obs:                           48.000                                           
+                                                                                    
+                             Parameter Estimates                              
+==============================================================================
+            Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+------------------------------------------------------------------------------
+treated        0.0502     0.0169     2.9656     0.0031      0.0170      0.0835
+==============================================================================
+
+F-test for Poolability: 15.813
+P-value: 0.0000
+Distribution: F(76,1362)
+
+Included effects: Entity, Time
+
+[alt_outcome_ticket_share]
+                           PanelOLS Estimation Summary                           
+=================================================================================
+Dep. Variable:     junior_ticket_share   R-squared:                        0.0206
+Estimator:                    PanelOLS   R-squared (Between):              0.0930
+No. Observations:                 1440   R-squared (Within):               0.0368
+Date:                 Tue, Mar 10 2026   R-squared (Overall):              0.0895
+Time:                         00:21:53   Log-likelihood                    880.00
+Cov. Estimator:              Clustered                                           
+                                         F-statistic:                      28.646
+Entities:                           48   P-value                           0.0000
+Avg Obs:                        30.000   Distribution:                  F(1,1362)
+Min Obs:                        30.000                                           
+Max Obs:                        30.000   F-statistic (robust):             25.570
+                                         P-value                           0.0000
+Time periods:                       30   Distribution:                  F(1,1362)
+Avg Obs:                        48.000                                           
+Min Obs:                        48.000                                           
+Max Obs:                        48.000                                           
+                                                                                 
+                             Parameter Estimates                              
+==============================================================================
+            Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+------------------------------------------------------------------------------
+treated        0.0692     0.0137     5.0567     0.0000      0.0424      0.0961
+==============================================================================
+
+F-test for Poolability: 18.731
+P-value: 0.0000
+Distribution: F(76,1362)
+
+Included effects: Entity, Time
+
+[weighted_by_total_output]
+                           PanelOLS Estimation Summary                           
+=================================================================================
+Dep. Variable:     junior_output_share   R-squared:                        0.0308
+Estimator:                    PanelOLS   R-squared (Between):              0.0806
+No. Observations:                 1440   R-squared (Within):               0.0661
+Date:                 Tue, Mar 10 2026   R-squared (Overall):              0.0802
+Time:                         00:21:53   Log-likelihood                    1425.7
+Cov. Estimator:              Clustered                                           
+                                         F-statistic:                      43.220
+Entities:                           48   P-value                           0.0000
+Avg Obs:                        30.000   Distribution:                  F(1,1362)
+Min Obs:                        30.000                                           
+Max Obs:                        30.000   F-statistic (robust):             35.371
+                                         P-value                           0.0000
+Time periods:                       30   Distribution:                  F(1,1362)
+Avg Obs:                        48.000                                           
+Min Obs:                        48.000                                           
+Max Obs:                        48.000                                           
+                                                                                 
+                             Parameter Estimates                              
+==============================================================================
+            Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+------------------------------------------------------------------------------
+treated        0.0584     0.0098     5.9474     0.0000      0.0391      0.0777
+==============================================================================
+
+F-test for Poolability: 38.881
+P-value: 0.0000
+Distribution: F(76,1362)
+
+Included effects: Entity, Time
+
+[winsorized_outcome_1pct]
+                              PanelOLS Estimation Summary                               
+========================================================================================
+Dep. Variable:     junior_output_share_winsor   R-squared:                        0.0280
+Estimator:                           PanelOLS   R-squared (Between):              0.0813
+No. Observations:                        1440   R-squared (Within):               0.0563
+Date:                        Tue, Mar 10 2026   R-squared (Overall):              0.0804
+Time:                                00:21:53   Log-likelihood                    1316.6
+Cov. Estimator:                     Clustered                                           
+                                                F-statistic:                      39.275
+Entities:                                  48   P-value                           0.0000
+Avg Obs:                               30.000   Distribution:                  F(1,1362)
+Min Obs:                               30.000                                           
+Max Obs:                               30.000   F-statistic (robust):             30.504
+                                                P-value                           0.0000
+Time periods:                              30   Distribution:                  F(1,1362)
+Avg Obs:                               48.000                                           
+Min Obs:                               48.000                                           
+Max Obs:                               48.000                                           
+                                                                                        
+                             Parameter Estimates                              
+==============================================================================
+            Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+------------------------------------------------------------------------------
+treated        0.0599     0.0108     5.5231     0.0000      0.0386      0.0811
+==============================================================================
+
+F-test for Poolability: 34.108
+P-value: 0.0000
+Distribution: F(76,1362)
+
+Included effects: Entity, Time
+
+[placebo_lead_window]
+                           PanelOLS Estimation Summary                           
+=================================================================================
+Dep. Variable:     junior_output_share   R-squared:                        0.0283
+Estimator:                    PanelOLS   R-squared (Between):              0.0880
+No. Observations:                 1440   R-squared (Within):               0.0547
+Date:                 Tue, Mar 10 2026   R-squared (Overall):              0.0868
+Time:                         00:21:53   Log-likelihood                    1294.0
+Cov. Estimator:              Clustered                                           
+                                         F-statistic:                      19.787
+Entities:                           48   P-value                           0.0000
+Avg Obs:                        30.000   Distribution:                  F(2,1361)
+Min Obs:                        30.000                                           
+Max Obs:                        30.000   F-statistic (robust):             15.719
+                                         P-value                           0.0000
+Time periods:                       30   Distribution:                  F(2,1361)
+Avg Obs:                        48.000                                           
+Min Obs:                        48.000                                           
+Max Obs:                        48.000                                           
+                                                                                 
+                               Parameter Estimates                               
+=================================================================================
+               Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+---------------------------------------------------------------------------------
+treated           0.0637     0.0128     4.9734     0.0000      0.0386      0.0888
+lead4_treated     0.0055     0.0093     0.5890     0.5560     -0.0127      0.0237
+=================================================================================
+
+F-test for Poolability: 33.308
+P-value: 0.0000
+Distribution: F(76,1361)
+
+Included effects: Entity, Time

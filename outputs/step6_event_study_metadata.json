@@ -1,0 +1,13 @@
+{
+  "step": "Step 6",
+  "nobs": 1440,
+  "n_teams": 48,
+  "n_weeks": 30,
+  "event_window": {
+    "lead_max": 6,
+    "lag_max": 8,
+    "reference": -1
+  },
+  "average_post_event_coef": 0.05341936556971965,
+  "pretrend_pvalue": 0.90113713251015
+}

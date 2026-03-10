@@ -5,11 +5,11 @@ Canonical project repo for approved topic:
 
 ## Status
 - ✅ Step 1: problem framing
-- ✅ Step 2: synthetic data-generation + ingestion pipeline complete
-- ⏳ Step 3: pending
-- ⏳ Step 4: pending
-- ⏳ Step 5: pending
-- ⏳ Step 6: pending
+- ✅ Step 2: synthetic data-generation + ingestion pipeline
+- ✅ Step 3: EDA artifacts and note
+- ✅ Step 4: baseline econometric model and note
+- ✅ Step 5: robustness checks and note
+- ✅ Step 6: dynamic event-time check and note
 - ⏳ Step 7: pending
 
 ## Research question
@@ -35,36 +35,75 @@ This project uses a synthetic dataset for the current research cycle so the desi
 └── scripts/
 ```
 
-## Step 2 artifacts
-### Script
-- `scripts/step2_synthetic_pipeline.py`
+## Step artifacts
 
-### Documentation
-- `docs/STEP2_data_extraction_spec.md`
-- `docs/STEP2_preanalysis_lock.md`
+### Step 2
+- Script: `scripts/step2_synthetic_pipeline.py`
+- Docs:
+  - `docs/STEP2_data_extraction_spec.md`
+  - `docs/STEP2_preanalysis_lock.md`
+- Outputs:
+  - `outputs/step2_synthetic_team_role_week.csv`
+  - `outputs/step2_team_week_panel.csv`
+  - `outputs/step2_data_dictionary.csv`
+  - `outputs/step2_generation_metadata.json`
 
-### Generated outputs
-- `outputs/step2_synthetic_team_role_week.csv`
-- `outputs/step2_team_week_panel.csv`
-- `outputs/step2_data_dictionary.csv`
-- `outputs/step2_generation_metadata.json`
+### Step 3
+- Script: `scripts/step3_eda.py`
+- Doc: `docs/STEP3_eda_note.md`
+- Outputs:
+  - `outputs/step3_eda_summary_stats.csv`
+  - `outputs/step3_eda_treated_comparison.csv`
+  - `outputs/step3_eda_adoption_timing.csv`
+  - `outputs/step3_eda_event_time_counts.csv`
+  - `outputs/step3_eda_correlation_matrix.csv`
+  - `outputs/step3_eda_snapshot.json`
 
-## Reproduce Step 2
+### Step 4
+- Script: `scripts/step4_baseline_model.py`
+- Doc: `docs/STEP4_baseline_model_note.md`
+- Outputs:
+  - `outputs/step4_baseline_results.csv`
+  - `outputs/step4_baseline_model_summary.txt`
+
+### Step 5
+- Script: `scripts/step5_robustness.py`
+- Doc: `docs/STEP5_robustness_note.md`
+- Outputs:
+  - `outputs/step5_robustness_results.csv`
+  - `outputs/step5_robustness_model_summaries.txt`
+
+### Step 6
+- Script: `scripts/step6_dynamic_check.py`
+- Doc: `docs/STEP6_dynamic_check_note.md`
+- Outputs:
+  - `outputs/step6_event_study_coefficients.csv`
+  - `outputs/step6_event_study_pretrend_test.csv`
+  - `outputs/step6_event_study_metadata.json`
+  - `outputs/step6_event_study_summary.txt`
+
+## Reproduction
 From repo root:
 
 ```bash
 python3 -m venv .venv
 . .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install numpy pandas
+python -m pip install numpy pandas statsmodels linearmodels scikit-learn
 python scripts/step2_synthetic_pipeline.py --seed 20260309 --n-teams 48 --n-weeks 30
+python scripts/step3_eda.py
+python scripts/step4_baseline_model.py
+python scripts/step5_robustness.py
+python scripts/step6_dynamic_check.py
 ```
 
-This command sequence regenerates all Step 2 output artifacts in `outputs/` from a clean local environment.
-
-If you already have the virtual environment created, the short form is:
+If the environment already exists, use:
 
 ```bash
 . .venv/bin/activate
 python scripts/step2_synthetic_pipeline.py --seed 20260309 --n-teams 48 --n-weeks 30
+python scripts/step3_eda.py
+python scripts/step4_baseline_model.py
+python scripts/step5_robustness.py
+python scripts/step6_dynamic_check.py
 ```
