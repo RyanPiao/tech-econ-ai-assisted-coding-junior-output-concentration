@@ -1,4 +1,4 @@
-# Tech-Econ Study: AI-Assisted Coding Adoption × Junior-Developer Output Concentration
+# AI-Assisted Coding Adoption × Junior-Developer Output Concentration
 
 Canonical project repo for approved topic:
 `tech-econ-ai-assisted-coding-junior-output-concentration`
@@ -10,7 +10,7 @@ Canonical project repo for approved topic:
 - ✅ Step 4: baseline econometric model and note
 - ✅ Step 5: robustness checks and note
 - ✅ Step 6: dynamic event-time check and note
-- ⏳ Step 7: pending
+- ✅ Step 7: executive summary narrative synthesis
 
 ## Research question
 Does team-level adoption of AI coding assistance change how output is distributed between junior and senior developers?
@@ -81,6 +81,9 @@ This project uses a synthetic dataset for the current research cycle so the desi
   - `outputs/step6_event_study_pretrend_test.csv`
   - `outputs/step6_event_study_metadata.json`
   - `outputs/step6_event_study_summary.txt`
+
+### Step 7
+- Doc: `docs/Executive_summary.md`
 
 ## Reproduction
 From repo root:
