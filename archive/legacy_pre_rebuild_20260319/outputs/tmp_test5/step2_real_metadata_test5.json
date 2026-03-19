@@ -1,0 +1,57 @@
+{
+  "data_type": "real_public_proxy",
+  "source": "GH Archive",
+  "ai_adoption_note": "AI adoption is proxy-based from public text keyword mentions; not direct seat/license telemetry.",
+  "config": {
+    "start_date": "2025-02-01",
+    "end_date": "2025-02-21",
+    "n_repos": 6,
+    "hour_step": 24,
+    "hour_offset": 0,
+    "max_hours": null,
+    "max_lines_per_hour": 200000,
+    "junior_prior_contrib_threshold": 25,
+    "ai_intensity_threshold": 0.02,
+    "ai_min_signal_events": 2,
+    "min_total_output_for_sample": 1,
+    "ai_proxy_keywords": [
+      "copilot",
+      "chatgpt",
+      "gpt-4",
+      "gpt4",
+      "gpt",
+      "claude",
+      "openai",
+      "anthropic",
+      "gemini",
+      "llama",
+      "cursor",
+      "codeium",
+      "tabnine",
+      "llm",
+      "assistant",
+      "prompt",
+      "ai",
+      "generative ai"
+    ],
+    "adoption_week1_burn_in_to_week2": true
+  },
+  "fetch_stats": {
+    "hours_requested": 21,
+    "hours_successful": 21,
+    "hours_failed": 0,
+    "events_scanned": 4067575,
+    "events_repo_matched": 1265,
+    "http_errors": []
+  },
+  "summary": {
+    "n_rows": 24,
+    "n_teams": 6,
+    "n_weeks": 4,
+    "analysis_sample_rows": 12,
+    "adoption_rate_team_level": 0.5,
+    "treated_share": 0.3333333333333333,
+    "mean_junior_output_share": 0.962121212121212,
+    "mean_ai_intensity": 0.10239480352142978
+  }
+}

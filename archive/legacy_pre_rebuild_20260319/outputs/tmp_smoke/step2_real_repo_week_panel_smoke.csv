@@ -1,0 +1,7 @@
+team_id,calendar_week,week_index,total_merged_prs,total_completed_tickets,total_commits,merge_count,median_cycle_time_hours,review_latency_hours,post_merge_bug_proxy,ai_signal_events,ai_eligible_events,observed_events,junior_merged_prs,junior_commits,junior_completed_tickets,total_output,junior_output,junior_merged_pr_share,junior_ticket_share,junior_commit_share,junior_output_share,ai_intensity,adoption_week,treated,post_period,event_time,analysis_sample
+continue-revolution/continue,2025-01-27,1,0,0,0,0,,,,0,0,0,0,0,0,0,0,,,,,0.0,,0,0,,0
+django/django,2025-01-27,1,0,0,0,0,,,,0,0,0,0,0,0,0,0,,,,,0.0,,0,0,,0
+kubernetes/kubernetes,2025-01-27,1,0,0,0,0,,,,0,0,0,0,0,0,0,0,,,,,0.0,,0,0,,0
+langchain-ai/langchain,2025-01-27,1,0,0,0,0,,,,0,0,0,0,0,0,0,0,,,,,0.0,,0,0,,0
+microsoft/vscode,2025-01-27,1,0,0,0,0,,,,0,0,0,0,0,0,0,0,,,,,0.0,,0,0,,0
+open-webui/open-webui,2025-01-27,1,0,0,0,0,,,0.0,0,0,1,0,0,0,0,0,,,,,0.0,,0,0,,0

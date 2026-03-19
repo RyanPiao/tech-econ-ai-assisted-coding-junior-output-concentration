@@ -1,0 +1,28 @@
+variable,type,definition
+team_id,string,Repository name as team proxy (owner/repo)
+calendar_week,date,"Week start date (Monday, UTC)"
+week_index,int,Sequential week index in sample
+adoption_week,float,Proxy AI adoption week index; NaN for never-adopters
+treated,int,1 if week_index >= adoption_week for adopter repos
+post_period,int,Alias timing indicator for treated period
+event_time,float,week_index - adoption_week for adopters
+total_merged_prs,int,Merged PR count from PullRequestEvent merged closures
+total_completed_tickets,int,Closed issues count from IssuesEvent action=closed
+total_output,int,total_merged_prs + total_completed_tickets
+junior_merged_prs,int,Merged PRs by authors flagged junior via prior contribution proxy
+junior_completed_tickets,int,Closed issues by actors flagged junior via prior contribution proxy
+junior_output,int,junior_merged_prs + junior_completed_tickets
+total_commits,int,PushEvent commit count (pusher-attributed)
+junior_commits,int,PushEvent commit count by junior-proxy actors
+junior_merged_pr_share,float,junior_merged_prs / total_merged_prs
+junior_ticket_share,float,junior_completed_tickets / total_completed_tickets
+junior_commit_share,float,junior_commits / total_commits
+junior_output_share,float,Primary outcome: junior_output / total_output
+merge_count,int,Alias for total_merged_prs
+median_cycle_time_hours,float,Median merged PR cycle time (merged_at - created_at)
+review_latency_hours,float,Median review latency proxy (review submitted - PR created)
+post_merge_bug_proxy,float,Bug-marker issue openings per merged PR in week
+ai_signal_events,int,Text-bearing events with AI-proxy keyword mention
+ai_eligible_events,int,Text-bearing events considered for AI signal denominator
+ai_intensity,float,ai_signal_events / ai_eligible_events (proxy intensity)
+analysis_sample,int,1 if total_output >= threshold and junior_output_share observed

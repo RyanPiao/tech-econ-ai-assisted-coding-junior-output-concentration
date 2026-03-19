@@ -1,0 +1,7 @@
+{
+  "lead_max": 6,
+  "lag_max": 8,
+  "reference_period": -1,
+  "pretrend_joint_pvalue": 0.9626825479103633,
+  "nobs": 2140
+}

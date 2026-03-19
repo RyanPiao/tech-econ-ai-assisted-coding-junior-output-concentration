@@ -1,0 +1,13 @@
+team_id,calendar_week,week_index,total_merged_prs,total_completed_tickets,total_commits,merge_count,median_cycle_time_hours,review_latency_hours,post_merge_bug_proxy,ai_signal_events,ai_eligible_events,observed_events,junior_merged_prs,junior_commits,junior_completed_tickets,total_output,junior_output,junior_merged_pr_share,junior_ticket_share,junior_commit_share,junior_output_share,ai_intensity,adoption_week,treated,post_period,event_time,analysis_sample
+continue-revolution/continue,2025-01-27,1,0,0,0,0,,,,0,0,0,0,0,0,0,0,,,,,0.0,,0,0,,0
+continue-revolution/continue,2025-02-03,2,0,0,0,0,,,,0,0,0,0,0,0,0,0,,,,,0.0,,0,0,,0
+django/django,2025-01-27,1,0,0,0,0,,,0.0,0,0,1,0,0,0,0,0,,,,,0.0,,0,0,,0
+django/django,2025-02-03,2,0,0,0,0,,,0.0,0,0,3,0,0,0,0,0,,,,,0.0,,0,0,,0
+kubernetes/kubernetes,2025-01-27,1,0,0,0,0,,2094.02,0.0,0,26,26,0,0,0,0,0,,,,,0.0,,0,0,,0
+kubernetes/kubernetes,2025-02-03,2,3,1,7,3,186.63,708.1588888888889,0.0,0,65,67,3,7,1,4,4,1.0,1.0,1.0,1.0,0.0,,0,0,,1
+langchain-ai/langchain,2025-01-27,1,1,0,1,1,50.79611111111111,63.55111111111111,0.0,0,8,14,1,1,0,1,1,1.0,,1.0,1.0,0.0,,0,0,,1
+langchain-ai/langchain,2025-02-03,2,2,0,2,2,8.574722222222222,43.14486111111111,0.0,0,22,38,2,2,0,2,2,1.0,,1.0,1.0,0.0,,0,0,,1
+microsoft/vscode,2025-01-27,1,0,2,0,0,,192.60444444444443,0.0,0,18,21,0,0,2,2,2,,1.0,,1.0,0.0,,0,0,,1
+microsoft/vscode,2025-02-03,2,4,7,33,4,0.47833333333333333,1.0566666666666666,0.0,0,76,97,4,33,7,11,11,1.0,1.0,1.0,1.0,0.0,,0,0,,1
+open-webui/open-webui,2025-01-27,1,0,0,0,0,,,0.0,0,0,57,0,0,0,0,0,,,,,0.0,,0,0,,0
+open-webui/open-webui,2025-02-03,2,0,0,5,0,,,0.0,0,17,122,0,5,0,0,0,,,1.0,,0.0,,0,0,,0

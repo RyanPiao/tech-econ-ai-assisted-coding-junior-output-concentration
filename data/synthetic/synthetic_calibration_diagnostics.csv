@@ -1,0 +1,17 @@
+metric,value
+target_junior_output_share_mean,0.925
+realized_junior_output_share_mean,0.8504759585853894
+target_junior_output_share_sd,0.2121320343559642
+realized_junior_output_share_sd,0.13270943665786653
+target_total_output_mean,14.0
+realized_total_output_mean,13.920370370370371
+target_total_output_sd,3.2958032163009534
+realized_total_output_sd,7.790812504077687
+target_adoption_rate,0.55
+realized_adoption_rate,0.5555555555555556
+target_treated_share,0.33
+realized_treated_share,0.36666666666666664
+seed,20260319.0
+n_teams,72.0
+n_weeks,30.0
+latent_treatment_effect,0.2

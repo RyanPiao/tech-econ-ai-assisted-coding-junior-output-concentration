@@ -1,0 +1,14 @@
+{
+  "input_rows": 24,
+  "input_teams": 6,
+  "raw_observed_adoption_rate": 0.0,
+  "raw_observed_treated_share": 0.0,
+  "raw_observed_median_adoption_week": null,
+  "raw_total_output_mean": 1.5833333333333333,
+  "placeholder_policy": {
+    "fallback_adoption_rate": 0.55,
+    "fallback_treated_share": 0.33,
+    "fallback_median_adoption_week": 11.0,
+    "total_output_mean_floor": 14.0
+  }
+}

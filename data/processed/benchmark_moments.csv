@@ -1,0 +1,8 @@
+moment,target_value,source,n_obs,definition
+junior_output_share_mean,0.925,observed_from_proxy_panel,8,Mean junior output share among non-missing real-proxy observations
+junior_output_share_sd,0.21213203435596423,observed_from_proxy_panel,8,Standard deviation of junior output share
+total_output_mean,14.0,observed_with_floor_adjustment_for_sparse_pilot_window,24,Mean team-week total output (floor-adjusted when pilot window is too sparse)
+total_output_sd,3.2958032163009534,observed_from_proxy_panel,24,Standard deviation of team-week total output
+adoption_rate,0.55,placeholder_assumption_due_to_insufficient_adopter_observations,6,Share of teams that adopt AI assistance
+treated_share,0.33,placeholder_assumption_due_to_insufficient_adopter_observations,24,Share of team-week observations in post-adoption period
+median_adoption_week,11.0,placeholder_assumption_due_to_insufficient_adopter_observations,0,Median adoption week among adopter teams

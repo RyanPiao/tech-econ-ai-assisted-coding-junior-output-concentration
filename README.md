@@ -1,112 +1,77 @@
-# AI-Assisted Coding Adoption × Junior-Developer Output Concentration
+# AI-Assisted Coding Adoption and Junior Output Concentration
 
-Canonical project repo for approved topic:
-`tech-econ-ai-assisted-coding-junior-output-concentration`
-
-## Status
-- ✅ Step 1: problem framing
-- ✅ Step 2: synthetic data-generation + ingestion pipeline
-- ✅ Step 3: EDA artifacts and note
-- ✅ Step 4: baseline econometric model and note
-- ✅ Step 5: robustness checks and note
-- ✅ Step 6: dynamic event-time check and note
-- ✅ Step 7: executive summary narrative synthesis
+Publication-facing economics working-paper package with a deterministic, end-to-end pipeline.
 
 ## Research question
-Does team-level adoption of AI coding assistance change how output is distributed between junior and senior developers?
+How is team-level adoption of AI coding assistance associated with the share of measurable output produced by junior developers?
 
-## Core variables
-- **Outcome variable:** share of merged commits or completed tickets attributable to junior developers
-- **Treatment variable:** team-level adoption of AI coding assistance
+## What this repository does
+1. Ingests and cleans available **real-data proxy moments** from a pilot panel (`data/raw/real_proxy/...`).
+2. Builds a **synthetic team-week panel calibrated to those benchmark moments**.
+3. Runs baseline and robustness panel specifications with team-clustered standard errors.
+4. Produces manuscript-ready figures/tables and supporting documentation for replication and writing.
 
-## Data type
-Synthetic
-
-## Data note
-This project uses a synthetic dataset for the current research cycle so the design, variables, and empirical workflow can be developed cleanly before any future extension to public real-world data.
+## Interpretation guardrails
+- This package does **not** claim direct causal identification from the real proxy pilot data.
+- If key timing moments are not identified in the raw panel (e.g., no observed adoption switches), the pipeline uses explicitly labeled placeholders.
+- Results should be interpreted as calibrated, design-conditional evidence that can guide further data collection and model refinement.
 
 ## Repository structure
 ```text
 .
-├── README.md
-├── docs/
-├── notebooks/
+├── data/
+│   ├── raw/
+│   ├── processed/
+│   └── synthetic/
+├── src/
+├── scripts/
 ├── outputs/
-└── scripts/
+│   ├── figures/
+│   └── tables/
+├── paper/
+├── docs/
+└── archive/
 ```
 
-## Step artifacts
-
-### Step 2
-- Script: `scripts/step2_synthetic_pipeline.py`
-- Docs:
-  - `docs/STEP2_data_extraction_spec.md`
-  - `docs/STEP2_preanalysis_lock.md`
-- Outputs:
-  - `outputs/step2_synthetic_team_role_week.csv`
-  - `outputs/step2_team_week_panel.csv`
-  - `outputs/step2_data_dictionary.csv`
-  - `outputs/step2_generation_metadata.json`
-
-### Step 3
-- Script: `scripts/step3_eda.py`
-- Doc: `docs/STEP3_eda_note.md`
-- Outputs:
-  - `outputs/step3_eda_summary_stats.csv`
-  - `outputs/step3_eda_treated_comparison.csv`
-  - `outputs/step3_eda_adoption_timing.csv`
-  - `outputs/step3_eda_event_time_counts.csv`
-  - `outputs/step3_eda_correlation_matrix.csv`
-  - `outputs/step3_eda_snapshot.json`
-
-### Step 4
-- Script: `scripts/step4_baseline_model.py`
-- Doc: `docs/STEP4_baseline_model_note.md`
-- Outputs:
-  - `outputs/step4_baseline_results.csv`
-  - `outputs/step4_baseline_model_summary.txt`
-
-### Step 5
-- Script: `scripts/step5_robustness.py`
-- Doc: `docs/STEP5_robustness_note.md`
-- Outputs:
-  - `outputs/step5_robustness_results.csv`
-  - `outputs/step5_robustness_model_summaries.txt`
-
-### Step 6
-- Script: `scripts/step6_dynamic_check.py`
-- Doc: `docs/STEP6_dynamic_check_note.md`
-- Outputs:
-  - `outputs/step6_event_study_coefficients.csv`
-  - `outputs/step6_event_study_pretrend_test.csv`
-  - `outputs/step6_event_study_metadata.json`
-  - `outputs/step6_event_study_summary.txt`
-
-### Step 7
-- Doc: `docs/Executive_summary.md`
-
-## Reproduction
-From repo root:
-
+## One-command run (from clean clone)
 ```bash
 python3 -m venv .venv
-. .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install numpy pandas statsmodels linearmodels scikit-learn
-python scripts/step2_synthetic_pipeline.py --seed 20260309 --n-teams 48 --n-weeks 30
-python scripts/step3_eda.py
-python scripts/step4_baseline_model.py
-python scripts/step5_robustness.py
-python scripts/step6_dynamic_check.py
+source .venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+make all
 ```
 
-If the environment already exists, use:
-
+Alternative orchestrator command:
 ```bash
-. .venv/bin/activate
-python scripts/step2_synthetic_pipeline.py --seed 20260309 --n-teams 48 --n-weeks 30
-python scripts/step3_eda.py
-python scripts/step4_baseline_model.py
-python scripts/step5_robustness.py
-python scripts/step6_dynamic_check.py
+python3 scripts/run_pipeline.py
 ```
+
+## Claim-to-artifact map
+| Claim | Artifact(s) |
+|---|---|
+| Benchmark moments and placeholder logic are explicit | `data/processed/benchmark_moments.csv`, `data/processed/benchmark_moments_metadata.json` |
+| Synthetic data are calibrated to benchmark moments | `data/synthetic/synthetic_calibration_diagnostics.csv`, `data/synthetic/synthetic_calibration_metadata.json` |
+| Baseline FE estimate for treatment association | `outputs/tables/table_baseline_results.csv`, `outputs/tables/table_baseline_model_summary.txt` |
+| Robustness and sensitivity checks | `outputs/tables/table_robustness_results.csv`, `outputs/tables/table_robustness_model_summaries.txt` |
+| Dynamic/event-time pattern and pretrend diagnostic | `outputs/tables/table_event_study_coefficients.csv`, `outputs/tables/table_event_study_metadata.json`, `outputs/tables/table_event_study_summary.txt`, `outputs/figures/figure_3_event_study.png` |
+| Sample composition and treatment-timing visuals | `outputs/tables/table_a1_descriptive_stats.csv`, `outputs/figures/figure_1_adoption_timing_histogram.png`, `outputs/figures/figure_2_group_trends.png` |
+| Identification caveats and recommended language | `docs/METHODS_ASSUMPTIONS_LIMITATIONS.md` |
+
+## Main scripts (execution order)
+1. `scripts/01_prepare_benchmark_moments.py`
+2. `scripts/02_generate_synthetic_data.py`
+3. `scripts/03_run_baseline_analysis.py`
+4. `scripts/04_run_robustness_checks.py`
+5. `scripts/05_generate_figures_tables.py`
+
+## Documentation index
+- Replication: `docs/REPLICATION_GUIDE.md`
+- Methods, assumptions, limitations, identification caveats: `docs/METHODS_ASSUMPTIONS_LIMITATIONS.md`
+- Audit + restructure log: `docs/AUDIT_AND_RESTRUCTURE_REPORT.md`
+- Writer handoff memo: `docs/WRITER_HANDOFF_MEMO.md`
+- Working-paper draft: `paper/working_paper_draft.md`
+
+## Legacy materials
+Pre-rebuild step-by-step artifacts were moved to:
+`archive/legacy_pre_rebuild_20260319/`
