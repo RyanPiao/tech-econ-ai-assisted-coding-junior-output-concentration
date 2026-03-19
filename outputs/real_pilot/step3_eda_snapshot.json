@@ -1,0 +1,11 @@
+{
+  "step": "Step 3",
+  "n_rows": 24,
+  "n_teams": 6,
+  "n_weeks": 4,
+  "adoption_rate_team_level": 0.0,
+  "mean_junior_output_share": 0.925,
+  "treated_share_team_weeks": 0.0,
+  "analysis_sample_rate": 0.20833333333333334,
+  "corr_treated_junior_share": NaN
+}

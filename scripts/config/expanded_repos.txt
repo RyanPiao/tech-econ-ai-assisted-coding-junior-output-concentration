@@ -1,0 +1,13 @@
+# Expanded sample repo list (public GitHub repos)
+microsoft/vscode
+kubernetes/kubernetes
+django/django
+langchain-ai/langchain
+continue-revolution/continue
+open-webui/open-webui
+pytorch/pytorch
+vercel/next.js
+numpy/numpy
+pallets/flask
+ansible/ansible
+home-assistant/core

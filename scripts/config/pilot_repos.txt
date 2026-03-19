@@ -1,0 +1,7 @@
+# Pilot sample repo list (public GitHub repos)
+microsoft/vscode
+kubernetes/kubernetes
+django/django
+langchain-ai/langchain
+continue-revolution/continue
+open-webui/open-webui
