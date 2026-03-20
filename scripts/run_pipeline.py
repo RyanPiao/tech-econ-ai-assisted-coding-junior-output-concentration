@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the full reproducible research pipeline in canonical order."""
+"""Run the full reproducible real-data-first research pipeline in canonical order."""
 
 from __future__ import annotations
 
@@ -9,12 +9,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
+PY = sys.executable
+
 STEPS = [
-    ["python3", "scripts/01_prepare_benchmark_moments.py"],
-    ["python3", "scripts/02_generate_synthetic_data.py"],
-    ["python3", "scripts/03_run_baseline_analysis.py"],
-    ["python3", "scripts/04_run_robustness_checks.py"],
-    ["python3", "scripts/05_generate_figures_tables.py"],
+    [PY, "scripts/01_prepare_real_panel.py"],
+    [PY, "scripts/02_run_baseline_analysis.py"],
+    [PY, "scripts/03_run_robustness_checks.py"],
+    [PY, "scripts/04_generate_figures_tables.py"],
 ]
 
 

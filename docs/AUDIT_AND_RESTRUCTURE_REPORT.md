@@ -1,49 +1,35 @@
 # Audit and Restructure Report
 
-Date: 2026-03-19
+Date: 2026-03-19 (updated real-data-first conversion)
 
-## 1) Audit findings from pre-rebuild repository
+## 1) Main conversion decision
+Repository was converted from a synthetic-first estimation package to a **real-data-first** package.
 
-### Structural issues
-- Flat, step-numbered layout (`scripts/stepX_...`, `outputs/stepX_...`) mixed production artifacts with temporary experiments.
-- No canonical `data/raw -> data/processed -> data/synthetic` flow.
-- No single deterministic run target from clean clone.
+## 2) Structural changes
+- Primary pipeline now runs only real-data scripts:
+  - `scripts/01_prepare_real_panel.py`
+  - `scripts/02_run_baseline_analysis.py`
+  - `scripts/03_run_robustness_checks.py`
+  - `scripts/04_generate_figures_tables.py`
+- `Makefile` and `scripts/run_pipeline.py` updated to exclude synthetic steps from core flow.
+- Synthetic scripts moved to `scripts/appendix_synthetic/` and labeled appendix-only.
 
-### Stale or potentially misleading artifacts
-- Multiple temp output directories (`outputs/tmp_smoke`, `outputs/tmp_test*`) with unclear status.
-- Legacy outputs and notes coexisted without a clear statement of canonical vs exploratory results.
-- Real-proxy pilot panel had sparse support and no observed adoption switches, but this limitation was not surfaced as a calibration blocker in a centralized benchmark protocol.
+## 3) Data changes
+- Added expanded observed panel:
+  - `data/raw/real_proxy/repo_week_panel_q1_2025_expanded.csv`
+  - matching metadata and dictionary files.
+- Primary processed artifact changed to:
+  - `data/processed/real_panel_clean.csv`
+  - `data/processed/real_panel_metadata.json`
 
-### Reproducibility gaps
-- Dependency install instructions were unpinned.
-- No explicit benchmark-moment extraction stage before synthetic calibration.
-- No consolidated replication guide with expected output list.
+## 4) Documentation rewrite
+Main narrative docs rewritten for real-data-first framing:
+- `README.md`
+- `docs/REPLICATION_GUIDE.md`
+- `docs/METHODS_ASSUMPTIONS_LIMITATIONS.md`
+- `docs/WRITER_HANDOFF_MEMO.md`
+- `paper/working_paper_draft.md`
+- Added `docs/APPENDIX_SYNTHETIC_SCOPE.md`
 
-## 2) Restructure actions implemented
-
-### New research architecture
-- Added canonical directories:
-  - `data/raw`, `data/processed`, `data/synthetic`
-  - `src/`
-  - `outputs/figures`, `outputs/tables`
-  - `paper/`
-  - `docs/`
-  - `scripts/`
-
-### Legacy cleanup
-- Moved old step-based docs/scripts/outputs into:
-  - `archive/legacy_pre_rebuild_20260319/`
-- Cleared non-canonical temporary output directories from active `outputs/`.
-
-### Pipeline rebuild
-- Introduced sequential scripts for:
-  - benchmark moment preparation
-  - synthetic calibration
-  - baseline analysis
-  - robustness checks
-  - figure/table export
-- Added reproducible orchestration via `Makefile` and `scripts/run_pipeline.py`.
-
-## 3) Remaining caveat after restructure
-- The currently included real proxy pilot panel is sparse and does not identify adoption-timing moments directly.
-- Pipeline addresses this transparently with explicit placeholders recorded in `benchmark_moments_metadata.json`.
+## 5) Identification status after conversion
+The real-data panel includes switchers, but timing support is concentrated and pretrend lead cells are sparse. Claims were downgraded to conservative associational language and explicit identification diagnostics were added.

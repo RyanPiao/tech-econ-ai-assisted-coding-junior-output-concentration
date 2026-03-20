@@ -1,0 +1,40 @@
+{
+  "data_type": "real_public_proxy",
+  "pipeline": "real-data-first_primary",
+  "treatment_proxy_definition": {
+    "name": "ai_proxy_trigger",
+    "definition": "1 if weekly ai_intensity >= threshold AND ai_signal_events >= minimum AND ai_eligible_events > 0",
+    "ai_intensity_threshold": 0.02,
+    "ai_min_signal_events": 2,
+    "burn_in_rule": "if first trigger week is 1, set adoption_week to 2 when week 2 exists"
+  },
+  "analysis_sample_rule": {
+    "min_total_output": 1,
+    "requires_nonmissing_junior_output_share": true
+  },
+  "coverage": {
+    "n_rows_total": 132,
+    "n_teams_total": 12,
+    "n_weeks_total": 11,
+    "n_rows_analysis": 68,
+    "n_teams_analysis": 9,
+    "n_weeks_analysis": 11
+  },
+  "identification_diagnostics": {
+    "adoption_rate_team_level_total": 0.4166666666666667,
+    "treated_share_total": 0.3484848484848485,
+    "treated_share_analysis": 0.5441176470588235,
+    "switchers_total": 5,
+    "switchers_analysis": 5,
+    "adoption_timing_counts_analysis": [
+      {
+        "adoption_week": 2.0,
+        "n_teams": 4
+      },
+      {
+        "adoption_week": 6.0,
+        "n_teams": 1
+      }
+    ]
+  }
+}

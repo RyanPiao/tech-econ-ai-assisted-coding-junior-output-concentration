@@ -1,117 +1,56 @@
-# Writer Handoff Memo
+# Writer Handoff Memo (Real-Data-First Version)
 
-## 1) Study purpose (one-paragraph version)
-This package evaluates whether team-level AI-assistance adoption is associated with changes in junior developers’ share of measurable output. The design is a benchmark-to-synthetic workflow: moments are extracted from a sparse public proxy panel, then used to calibrate a larger synthetic team-week panel for econometric estimation. The resulting estimates are useful for disciplined scenario analysis and draft writing, but they are not definitive causal effects. (Artifacts: `docs/METHODS_ASSUMPTIONS_LIMITATIONS.md`; `outputs/tables/table_baseline_results.csv`)
+## 1) Study purpose (one paragraph)
+This package estimates the association between a real-data proxy for repo-week AI-assistance adoption and junior developers’ share of observable output. All core estimates now come from observed GH Archive–derived panel data; synthetic outputs are removed from the main narrative and restricted to appendix-only scope.
 
-## 2) Data architecture and what is observed vs assumed
-- **Proxy pilot input:** `data/raw/real_proxy/repo_week_panel_pilot.csv`
-- **Benchmark moments output:** `data/processed/benchmark_moments.csv`
-- **Benchmark metadata / placeholder policy:** `data/processed/benchmark_moments_metadata.json`
-- **Synthetic calibrated panel:** `data/synthetic/synthetic_team_week_panel.csv`
-- **Calibration diagnostics:** `data/synthetic/synthetic_calibration_diagnostics.csv`
+## 2) Data architecture (observed only for core analysis)
+- Raw real panel: `data/raw/real_proxy/repo_week_panel_q1_2025_expanded.csv`
+- Raw metadata: `data/raw/real_proxy/repo_week_panel_q1_2025_expanded_metadata.json`
+- Cleaned analysis panel: `data/processed/real_panel_clean.csv`
+- Panel metadata + identification diagnostics: `data/processed/real_panel_metadata.json`
 
-Important interpretation point for prose: the included proxy pilot does not contain observed adopter switches for timing identification, so timing moments in calibration are explicitly placeholder-based and documented as such. (Artifacts: `data/processed/benchmark_moments.csv`; `data/processed/benchmark_moments_metadata.json`; `docs/METHODS_ASSUMPTIONS_LIMITATIONS.md`)
+## 3) Estimation setup (main text)
+- Baseline: TWFE (team FE + week FE), team-clustered SE.
+- Outcome: `junior_output_share`.
+- Treatment: `treated` from proxy adoption timing (`ai_intensity >= 0.02` and `ai_signal_events >= 2`).
+- Baseline controls: `log_total_output`, `post_merge_bug_proxy_filled`.
+- Robustness: no-controls variant, full-controls variant, alternative outcomes, winsorized outcome, placebo lead, high-output subsample.
+- Dynamic: event-study with lead max 3, lag max 4.
 
-## 3) Estimation setup (for methods section)
-- Baseline model: two-way fixed effects (team FE + week FE), SE clustered by team.
-- Primary outcome: `junior_output_share`.
-- Primary regressor: `treated` (post-adoption indicator).
-- Robustness set:
-  - `junior_merged_pr_share` outcome
-  - `junior_ticket_share` outcome
-  - winsorized primary outcome
-  - placebo lead term (`lead3_treated`)
-  - large-team subsample (`team_size >= 8`)
-- Event study: leads/lags with reference period at event time -1 (lead max 6, lag max 8).
-
-(Artifacts: `outputs/tables/table_baseline_model_summary.txt`; `outputs/tables/table_robustness_model_summaries.txt`; `outputs/tables/table_event_study_metadata.json`; `outputs/tables/table_event_study_summary.txt`)
-
-## 4) Core quantitative results to report conservatively
+## 4) Core quantitative results (current run)
 ### Baseline
-- Treated coefficient: **0.0151**
-- SE: **0.0100**
-- p-value: **0.131**
-- 95% CI: **[-0.0045, 0.0348]**
-- N: **2,140 team-weeks** across **72 teams** and **30 weeks**
+- Treated coefficient: **-0.0729**
+- SE: **0.0957**
+- p-value: **0.446**
+- 95% CI: **[-0.2605, 0.1148]**
+- N: **68 team-weeks**, **9 teams**, **11 weeks**
 
-(Artifact: `outputs/tables/table_baseline_results.csv`)
+Artifact: `outputs/tables/table_baseline_results.csv`
 
 ### Robustness snapshot
-- Merged-PR-share outcome: **0.0243** (p=0.102)
-- Ticket-share outcome: **-0.00004** (p=0.998)
-- Winsorized primary outcome: **0.0161** (p=0.102)
-- Placebo lead term: **0.0032** (p=0.805)
-- Large-team subsample: **0.0127** (p=0.312)
+- No-controls: -0.0179 (p=0.767)
+- Full-controls: -0.0489 (p=0.666)
+- Alt merged-PR-share: +0.0149 (p=0.808)
+- Alt ticket-share: -0.0699 (p=0.300)
+- Placebo lead term: -0.4620 (p<0.001) [diagnostic concern]
 
-(Artifact: `outputs/tables/table_robustness_results.csv`)
+Artifact: `outputs/tables/table_robustness_results.csv`
 
-### Event-time diagnostics
-- Joint pretrend p-value: **0.963**
-- Pre-period coefficients: generally near zero and imprecise
-- Post-period coefficients: mixed sign and mostly imprecise; event time +7 is borderline (p=0.059)
+### Dynamic and identification diagnostics
+- Joint pretrend p-value: **3.68e-06**
+- Lead support is sparse (event -3: 1 observation, event -2: 1 observation)
+- Switchers: **5 teams**
+- Adoption timing clustered at week 2 (4 teams) and week 6 (1 team)
 
-(Artifacts: `outputs/tables/table_event_study_coefficients.csv`; `outputs/tables/table_event_study_metadata.json`)
+Artifacts:
+- `outputs/tables/table_event_study_metadata.json`
+- `outputs/tables/table_identification_diagnostics.csv`
+- `outputs/tables/table_identification_timing_coverage.csv`
 
-## 5) Suggested wording discipline (important)
-Use phrases such as:
-- “associated with”
-- “consistent with”
-- “calibrated scenario evidence”
+## 5) Interpretation discipline for text
+Recommended: “proxy-based association”, “identification-limited”, “not causally identified in current sample”.
+Avoid: causal verbs and definitive welfare/productivity conclusions.
 
-Avoid phrases such as:
-- “caused by”
-- “proves that”
-- “establishes causal impact”
-
-(Artifact: `docs/METHODS_ASSUMPTIONS_LIMITATIONS.md`)
-
-## 6) Figure/table production map
-- **Table A1 (descriptives):** `outputs/tables/table_a1_descriptive_stats.csv`
-- **Baseline table:** `outputs/tables/table_baseline_results.csv`
-- **Robustness table:** `outputs/tables/table_robustness_results.csv`
-- **Event-study table:** `outputs/tables/table_event_study_coefficients.csv`
-- **Figure 1 (adoption timing):** `outputs/figures/figure_1_adoption_timing_histogram.png`
-- **Figure 2 (group trends):** `outputs/figures/figure_2_group_trends.png`
-- **Figure 3 (event study):** `outputs/figures/figure_3_event_study.png`
-
-## 7) Publication-ready caption and notes starter text
-### Figure 1
-**Caption:** Distribution of adoption week among adopter teams in the synthetic analysis sample.
-
-**Notes:** Never-adopter teams are excluded from the histogram. Timing reflects calibrated synthetic design inputs/outputs, not direct firm telemetry.
-
-### Figure 2
-**Caption:** Weekly mean junior output share for ever-adopter versus never-adopter teams.
-
-**Notes:** Lines are unadjusted descriptive means and should not be read as regression-adjusted treatment effects.
-
-### Figure 3
-**Caption:** Event-time coefficients for junior output share with event time -1 omitted as reference; 95% confidence intervals shown.
-
-**Notes:** Estimates come from a TWFE model with team-clustered standard errors. Pretrend evidence is diagnostic and not sufficient for causal identification.
-
-### Table A1
-**Caption:** Descriptive statistics for the synthetic analysis sample.
-
-**Notes:** Statistics are computed on `analysis_sample == 1`; includes sample size, outcome moments, adoption rate, and treated share.
-
-### Baseline table
-**Caption:** Baseline TWFE estimate for junior output share.
-
-**Notes:** Includes team and week fixed effects with team-clustered SE. Coefficient sign is positive, but confidence intervals include zero.
-
-### Robustness table
-**Caption:** Sensitivity checks across alternative outcomes, sample definitions, and placebo timing.
-
-**Notes:** Intended to assess directional stability and precision under alternative specifications.
-
-### Event-study table
-**Caption:** Lead/lag coefficients around adoption relative to event time -1.
-
-**Notes:** Include joint pretrend p-value in footnote; individual coefficients are noisy and should be interpreted cautiously.
-
-## 8) Reproducibility references to keep unchanged in manuscript package
-- `docs/REPLICATION_GUIDE.md`
-- `README.md`
-
-Retain command sequences exactly as documented.
+## 6) Synthetic boundary (appendix only)
+If synthetic material is included, explicitly place it in appendix and cite:
+`docs/APPENDIX_SYNTHETIC_SCOPE.md`

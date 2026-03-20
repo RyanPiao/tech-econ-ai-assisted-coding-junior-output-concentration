@@ -1,4 +1,4 @@
-# Replication Guide
+# Replication Guide (Real-Data-First)
 
 ## Environment
 ```bash
@@ -17,24 +17,17 @@ make all
 
 ### Option B: explicit script sequence
 ```bash
-python3 scripts/01_prepare_benchmark_moments.py
-python3 scripts/02_generate_synthetic_data.py
-python3 scripts/03_run_baseline_analysis.py
-python3 scripts/04_run_robustness_checks.py
-python3 scripts/05_generate_figures_tables.py
+python3 scripts/01_prepare_real_panel.py
+python3 scripts/02_run_baseline_analysis.py
+python3 scripts/03_run_robustness_checks.py
+python3 scripts/04_generate_figures_tables.py
 ```
 
 ## Expected generated files
 
-### Processed benchmark layer
-- `data/processed/benchmark_panel_clean.csv`
-- `data/processed/benchmark_moments.csv`
-- `data/processed/benchmark_moments_metadata.json`
-
-### Synthetic layer
-- `data/synthetic/synthetic_team_week_panel.csv`
-- `data/synthetic/synthetic_calibration_diagnostics.csv`
-- `data/synthetic/synthetic_calibration_metadata.json`
+### Processed real-data layer
+- `data/processed/real_panel_clean.csv`
+- `data/processed/real_panel_metadata.json`
 
 ### Tables
 - `outputs/tables/table_baseline_results.csv`
@@ -42,6 +35,8 @@ python3 scripts/05_generate_figures_tables.py
 - `outputs/tables/table_robustness_results.csv`
 - `outputs/tables/table_robustness_model_summaries.txt`
 - `outputs/tables/table_a1_descriptive_stats.csv`
+- `outputs/tables/table_identification_diagnostics.csv`
+- `outputs/tables/table_identification_timing_coverage.csv`
 - `outputs/tables/table_event_study_coefficients.csv`
 - `outputs/tables/table_event_study_metadata.json`
 - `outputs/tables/table_event_study_summary.txt`
@@ -52,6 +47,6 @@ python3 scripts/05_generate_figures_tables.py
 - `outputs/figures/figure_3_event_study.png`
 
 ## Determinism notes
-- Synthetic generation uses fixed seed (`DEFAULT_SEED = 20260319` unless overridden).
+- Primary pipeline is deterministic conditional on included raw input files.
 - Dependency versions are pinned in `requirements.txt`.
-- If changing seed or sample size, record the change in the paper appendix and rerun full pipeline.
+- If you refresh the raw data from GH Archive (outside the primary pipeline), record the exact fetch window, repo list, and thresholds in the raw metadata JSON.
