@@ -2,11 +2,11 @@
   "lead_max": 3,
   "lag_max": 4,
   "reference_period": -1,
-  "pretrend_joint_pvalue": 3.679058606994737e-06,
+  "pretrend_joint_pvalue": 0.9585867317382591,
   "lead_event_counts": {
-    "event_m3": 1,
-    "event_m2": 1
+    "event_m3": 3,
+    "event_m2": 3
   },
-  "nobs": 68,
+  "nobs": 165,
   "warning": "Pretrend test can be unstable when lead-event counts are sparse."
 }

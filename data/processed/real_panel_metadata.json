@@ -13,26 +13,34 @@
     "requires_nonmissing_junior_output_share": true
   },
   "coverage": {
-    "n_rows_total": 132,
-    "n_teams_total": 12,
-    "n_weeks_total": 11,
-    "n_rows_analysis": 68,
-    "n_teams_analysis": 9,
-    "n_weeks_analysis": 11
+    "n_rows_total": 360,
+    "n_teams_total": 20,
+    "n_weeks_total": 18,
+    "n_rows_analysis": 165,
+    "n_teams_analysis": 16,
+    "n_weeks_analysis": 18
   },
   "identification_diagnostics": {
-    "adoption_rate_team_level_total": 0.4166666666666667,
-    "treated_share_total": 0.3484848484848485,
-    "treated_share_analysis": 0.5441176470588235,
-    "switchers_total": 5,
-    "switchers_analysis": 5,
+    "adoption_rate_team_level_total": 0.5,
+    "treated_share_total": 0.3972222222222222,
+    "treated_share_analysis": 0.48484848484848486,
+    "switchers_total": 10,
+    "switchers_analysis": 7,
     "adoption_timing_counts_analysis": [
       {
         "adoption_week": 2.0,
-        "n_teams": 4
+        "n_teams": 5
+      },
+      {
+        "adoption_week": 5.0,
+        "n_teams": 1
       },
       {
         "adoption_week": 6.0,
+        "n_teams": 1
+      },
+      {
+        "adoption_week": 9.0,
         "n_teams": 1
       }
     ]

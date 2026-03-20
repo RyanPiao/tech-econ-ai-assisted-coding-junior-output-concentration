@@ -1,0 +1,4 @@
+rank,proxy,score,justification
+1,balanced,8.0,measurement_prior=2.0; sign_consistency=1.00; pretrend_pass=True; placebo_pass_share=1.00; switchers=9; treated_share=0.70; stacked_estimable=True; reweighted_estimable=True
+2,strict,6.5,measurement_prior=1.5; sign_consistency=0.50; pretrend_pass=False; placebo_pass_share=0.75; switchers=8; treated_share=0.48; stacked_estimable=True; reweighted_estimable=True
+3,broad,4.0,measurement_prior=-1.0; sign_consistency=1.00; pretrend_pass=False; placebo_pass_share=0.75; switchers=13; treated_share=0.84; stacked_estimable=True; reweighted_estimable=True

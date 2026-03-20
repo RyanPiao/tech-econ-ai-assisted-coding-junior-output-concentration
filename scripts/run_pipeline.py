@@ -16,6 +16,7 @@ STEPS = [
     [PY, "scripts/02_run_baseline_analysis.py"],
     [PY, "scripts/03_run_robustness_checks.py"],
     [PY, "scripts/04_generate_figures_tables.py"],
+    [PY, "scripts/05_build_expansion_diagnostics.py"],
 ]
 
 

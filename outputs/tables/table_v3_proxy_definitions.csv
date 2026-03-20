@@ -1,0 +1,4 @@
+proxy,ai_intensity_threshold,ai_min_signal_events,ai_min_eligible_events,rationale
+strict,0.1,5,5,High-precision proxy: requires relatively high mention intensity and multiple AI-signal events with non-trivial eligible text volume.
+balanced,0.02,2,1,Baseline-like proxy aligned with prior pipeline defaults; balances false positives and false negatives.
+broad,0.005,1,1,High-recall proxy: allows low-intensity single-signal weeks to test sensitivity to wider treatment coding.

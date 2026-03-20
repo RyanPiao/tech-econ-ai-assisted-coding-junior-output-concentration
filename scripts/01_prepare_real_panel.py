@@ -196,7 +196,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Prepare cleaned real-data panel")
     parser.add_argument(
         "--input",
-        default="data/raw/real_proxy/repo_week_panel_q1_2025_expanded.csv",
+        default="data/raw/real_proxy/repo_week_panel_q2_2025_more_data.csv",
         help="Path to raw real-data panel",
     )
     parser.add_argument(

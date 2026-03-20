@@ -1,8 +1,8 @@
 metric,value
-n_rows_total,132.0
-n_rows_analysis,68.0
-n_teams_analysis,9.0
-switchers_analysis,5.0
-treated_share_analysis,0.5441176470588235
-event_study_pretrend_joint_pvalue,3.679058606994737e-06
-event_study_nobs,68.0
+n_rows_total,360.0
+n_rows_analysis,165.0
+n_teams_analysis,16.0
+switchers_analysis,7.0
+treated_share_analysis,0.48484848484848486
+event_study_pretrend_joint_pvalue,0.9585867317382591
+event_study_nobs,165.0

@@ -1,0 +1,45 @@
+                             OLS Regression Results                            
+===============================================================================
+Dep. Variable:     junior_output_share   R-squared:                       0.467
+Model:                             OLS   Adj. R-squared:                  0.223
+Method:                  Least Squares   F-statistic:                     2.418
+Date:                 Fri, 20 Mar 2026   Prob (F-statistic):              0.120
+Time:                         00:59:08   Log-Likelihood:                 15.138
+No. Observations:                   68   AIC:                             13.72
+Df Residuals:                       46   BIC:                             62.55
+Df Model:                           21                                         
+Covariance Type:               cluster                                         
+========================================================================================================
+                                           coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------
+Intercept                                1.3103      0.214      6.116      0.000       0.890       1.730
+C(team_id)[T.home-assistant/core]       -0.2261      0.179     -1.260      0.208      -0.578       0.126
+C(team_id)[T.kubernetes/kubernetes]     -0.1852      0.146     -1.273      0.203      -0.470       0.100
+C(team_id)[T.langchain-ai/langchain]    -0.1527      0.168     -0.909      0.363      -0.482       0.177
+C(team_id)[T.microsoft/vscode]          -0.2031      0.183     -1.110      0.267      -0.562       0.155
+C(team_id)[T.numpy/numpy]               -0.4069      0.162     -2.508      0.012      -0.725      -0.089
+C(team_id)[T.open-webui/open-webui]     -0.1444      0.181     -0.797      0.426      -0.500       0.211
+C(team_id)[T.pytorch/pytorch]           -0.5525      0.165     -3.356      0.001      -0.875      -0.230
+C(team_id)[T.vercel/next.js]            -0.3684      0.166     -2.223      0.026      -0.693      -0.044
+C(week_index)[T.2]                       0.0986      0.092      1.070      0.285      -0.082       0.279
+C(week_index)[T.3]                      -0.0085      0.072     -0.118      0.906      -0.150       0.133
+C(week_index)[T.4]                       0.0202      0.123      0.164      0.870      -0.222       0.262
+C(week_index)[T.5]                      -0.0270      0.150     -0.180      0.857      -0.320       0.266
+C(week_index)[T.6]                       0.0862      0.163      0.527      0.598      -0.234       0.407
+C(week_index)[T.7]                      -0.0208      0.172     -0.121      0.903      -0.357       0.316
+C(week_index)[T.8]                      -0.2063      0.214     -0.965      0.335      -0.625       0.213
+C(week_index)[T.9]                      -0.0301      0.147     -0.204      0.838      -0.319       0.259
+C(week_index)[T.10]                     -0.1556      0.207     -0.751      0.452      -0.562       0.250
+C(week_index)[T.11]                     -0.2655      0.210     -1.265      0.206      -0.677       0.146
+treated                                 -0.0729      0.096     -0.761      0.446      -0.261       0.115
+log_total_output                        -0.0323      0.066     -0.487      0.626      -0.162       0.098
+post_merge_bug_proxy_filled             -0.0258      0.016     -1.636      0.102      -0.057       0.005
+==============================================================================
+Omnibus:                       12.786   Durbin-Watson:                   2.162
+Prob(Omnibus):                  0.002   Jarque-Bera (JB):               17.152
+Skew:                          -0.751   Prob(JB):                     0.000189
+Kurtosis:                       4.949   Cond. No.                         73.5
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)

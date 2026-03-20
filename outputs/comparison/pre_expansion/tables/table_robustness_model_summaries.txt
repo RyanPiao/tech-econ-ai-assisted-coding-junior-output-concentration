@@ -1,0 +1,325 @@
+[robust_no_controls]
+                             OLS Regression Results                            
+===============================================================================
+Dep. Variable:     junior_output_share   R-squared:                       0.460
+Model:                             OLS   Adj. R-squared:                  0.246
+Method:                  Least Squares   F-statistic:                     2.640
+Date:                 Fri, 20 Mar 2026   Prob (F-statistic):             0.0986
+Time:                         00:59:09   Log-Likelihood:                 14.676
+No. Observations:                   68   AIC:                             10.65
+Df Residuals:                       48   BIC:                             55.04
+Df Model:                           19                                         
+Covariance Type:               cluster                                         
+========================================================================================================
+                                           coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------
+Intercept                                1.3287      0.209      6.373      0.000       0.920       1.737
+C(team_id)[T.home-assistant/core]       -0.3036      0.151     -2.017      0.044      -0.599      -0.009
+C(team_id)[T.kubernetes/kubernetes]     -0.1873      0.137     -1.366      0.172      -0.456       0.081
+C(team_id)[T.langchain-ai/langchain]    -0.1951      0.155     -1.258      0.208      -0.499       0.109
+C(team_id)[T.microsoft/vscode]          -0.3027      0.151     -2.011      0.044      -0.598      -0.008
+C(team_id)[T.numpy/numpy]               -0.3865      0.142     -2.718      0.007      -0.665      -0.108
+C(team_id)[T.open-webui/open-webui]     -0.2011      0.171     -1.178      0.239      -0.536       0.134
+C(team_id)[T.pytorch/pytorch]           -0.6412      0.147     -4.365      0.000      -0.929      -0.353
+C(team_id)[T.vercel/next.js]            -0.3715      0.159     -2.330      0.020      -0.684      -0.059
+C(week_index)[T.2]                       0.0427      0.068      0.632      0.528      -0.090       0.175
+C(week_index)[T.3]                      -0.0779      0.080     -0.979      0.328      -0.234       0.078
+C(week_index)[T.4]                      -0.0700      0.113     -0.620      0.535      -0.291       0.151
+C(week_index)[T.5]                      -0.0972      0.151     -0.643      0.520      -0.393       0.199
+C(week_index)[T.6]                      -0.0003      0.078     -0.004      0.997      -0.153       0.152
+C(week_index)[T.7]                      -0.0933      0.148     -0.630      0.529      -0.383       0.197
+C(week_index)[T.8]                      -0.2656      0.206     -1.292      0.196      -0.669       0.137
+C(week_index)[T.9]                      -0.0983      0.122     -0.807      0.420      -0.337       0.140
+C(week_index)[T.10]                     -0.2189      0.200     -1.095      0.274      -0.611       0.173
+C(week_index)[T.11]                     -0.3287      0.209     -1.577      0.115      -0.737       0.080
+treated                                 -0.0179      0.060     -0.296      0.767      -0.136       0.101
+==============================================================================
+Omnibus:                       11.668   Durbin-Watson:                   2.144
+Prob(Omnibus):                  0.003   Jarque-Bera (JB):               14.647
+Skew:                          -0.718   Prob(JB):                     0.000660
+Kurtosis:                       4.763   Cond. No.                         39.9
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+[robust_full_controls]
+                             OLS Regression Results                            
+===============================================================================
+Dep. Variable:     junior_output_share   R-squared:                       0.491
+Model:                             OLS   Adj. R-squared:                  0.225
+Method:                  Least Squares   F-statistic:                     3.482
+Date:                 Fri, 20 Mar 2026   Prob (F-statistic):             0.0507
+Time:                         00:59:09   Log-Likelihood:                 16.719
+No. Observations:                   68   AIC:                             14.56
+Df Residuals:                       44   BIC:                             67.83
+Df Model:                           23                                         
+Covariance Type:               cluster                                         
+========================================================================================================
+                                           coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------
+Intercept                                1.6274      0.268      6.082      0.000       1.103       2.152
+C(team_id)[T.home-assistant/core]       -0.5563      0.339     -1.640      0.101      -1.221       0.108
+C(team_id)[T.kubernetes/kubernetes]     -0.4485      0.165     -2.711      0.007      -0.773      -0.124
+C(team_id)[T.langchain-ai/langchain]    -0.4954      0.280     -1.772      0.076      -1.043       0.053
+C(team_id)[T.microsoft/vscode]          -0.5480      0.346     -1.582      0.114      -1.227       0.131
+C(team_id)[T.numpy/numpy]               -0.6984      0.185     -3.768      0.000      -1.062      -0.335
+C(team_id)[T.open-webui/open-webui]     -0.4568      0.258     -1.771      0.077      -0.962       0.049
+C(team_id)[T.pytorch/pytorch]           -0.8772      0.283     -3.101      0.002      -1.432      -0.323
+C(team_id)[T.vercel/next.js]            -0.6907      0.222     -3.109      0.002      -1.126      -0.255
+C(week_index)[T.2]                       0.1054      0.110      0.960      0.337      -0.110       0.320
+C(week_index)[T.3]                       0.0218      0.085      0.257      0.797      -0.144       0.188
+C(week_index)[T.4]                       0.0189      0.147      0.129      0.898      -0.270       0.307
+C(week_index)[T.5]                      -0.0254      0.162     -0.157      0.875      -0.343       0.292
+C(week_index)[T.6]                       0.0736      0.194      0.378      0.705      -0.308       0.455
+C(week_index)[T.7]                      -0.0283      0.183     -0.155      0.877      -0.386       0.330
+C(week_index)[T.8]                      -0.2371      0.246     -0.965      0.334      -0.719       0.244
+C(week_index)[T.9]                      -0.0245      0.171     -0.143      0.886      -0.359       0.310
+C(week_index)[T.10]                     -0.1768      0.238     -0.744      0.457      -0.643       0.289
+C(week_index)[T.11]                     -0.2585      0.240     -1.077      0.282      -0.729       0.212
+treated                                 -0.0489      0.113     -0.432      0.666      -0.271       0.173
+log_total_output                        -0.0281      0.073     -0.385      0.701      -0.171       0.115
+post_merge_bug_proxy_filled             -0.0274      0.013     -2.073      0.038      -0.053      -0.001
+median_cycle_time_hours_filled           0.0001      0.000      1.004      0.315      -0.000       0.000
+review_latency_hours_filled             -0.0002      0.000     -1.239      0.215      -0.001       0.000
+==============================================================================
+Omnibus:                        9.810   Durbin-Watson:                   2.165
+Prob(Omnibus):                  0.007   Jarque-Bera (JB):               11.259
+Skew:                          -0.647   Prob(JB):                      0.00359
+Kurtosis:                       4.517   Cond. No.                     1.21e+04
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+[2] The condition number is large, 1.21e+04. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+[robust_alt_outcome_merged_share]
+                              OLS Regression Results                              
+==================================================================================
+Dep. Variable:     junior_merged_pr_share   R-squared:                       0.326
+Model:                                OLS   Adj. R-squared:                 -0.053
+Method:                     Least Squares   F-statistic:                     17.25
+Date:                    Fri, 20 Mar 2026   Prob (F-statistic):           0.000643
+Time:                            00:59:09   Log-Likelihood:                 11.511
+No. Observations:                      51   AIC:                             14.98
+Df Residuals:                          32   BIC:                             51.68
+Df Model:                              18                                         
+Covariance Type:                  cluster                                         
+========================================================================================================
+                                           coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------
+Intercept                                1.1506      0.224      5.139      0.000       0.712       1.589
+C(team_id)[T.kubernetes/kubernetes]      0.1105      0.059      1.886      0.059      -0.004       0.225
+C(team_id)[T.langchain-ai/langchain]    -0.0035      0.140     -0.025      0.980      -0.278       0.271
+C(team_id)[T.microsoft/vscode]          -0.0096      0.028     -0.337      0.736      -0.065       0.046
+C(team_id)[T.numpy/numpy]               -0.2059      0.111     -1.854      0.064      -0.424       0.012
+C(team_id)[T.open-webui/open-webui]      0.0793      0.150      0.529      0.597      -0.215       0.373
+C(team_id)[T.pytorch/pytorch]           -0.0213      0.039     -0.547      0.585      -0.098       0.055
+C(team_id)[T.vercel/next.js]            -0.1759      0.043     -4.099      0.000      -0.260      -0.092
+C(week_index)[T.2]                       0.1298      0.044      2.977      0.003       0.044       0.215
+C(week_index)[T.3]                      -0.0431      0.141     -0.305      0.760      -0.320       0.234
+C(week_index)[T.4]                       0.1230      0.043      2.838      0.005       0.038       0.208
+C(week_index)[T.5]                       0.0778      0.051      1.529      0.126      -0.022       0.178
+C(week_index)[T.6]                       0.1293      0.089      1.461      0.144      -0.044       0.303
+C(week_index)[T.7]                      -0.0969      0.157     -0.618      0.536      -0.404       0.210
+C(week_index)[T.8]                      -0.2264      0.095     -2.392      0.017      -0.412      -0.041
+C(week_index)[T.9]                      -0.0429      0.129     -0.332      0.740      -0.297       0.211
+C(week_index)[T.10]                     -0.1144      0.183     -0.626      0.531      -0.472       0.243
+C(week_index)[T.11]                     -0.2141      0.196     -1.095      0.274      -0.597       0.169
+treated                                  0.0149      0.061      0.243      0.808      -0.105       0.135
+log_total_output                        -0.1198      0.118     -1.013      0.311      -0.352       0.112
+==============================================================================
+Omnibus:                       23.061   Durbin-Watson:                   2.613
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               38.995
+Skew:                          -1.420   Prob(JB):                     3.41e-09
+Kurtosis:                       6.206   Cond. No.                     2.41e+16
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+[2] The smallest eigenvalue is 4.01e-31. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+
+[robust_alt_outcome_ticket_share]
+                             OLS Regression Results                            
+===============================================================================
+Dep. Variable:     junior_ticket_share   R-squared:                       0.619
+Model:                             OLS   Adj. R-squared:                  0.369
+Method:                  Least Squares   F-statistic:                     38.55
+Date:                 Fri, 20 Mar 2026   Prob (F-statistic):           6.00e-05
+Time:                         00:59:09   Log-Likelihood:                 18.264
+No. Observations:                   49   AIC:                             3.472
+Df Residuals:                       29   BIC:                             41.31
+Df Model:                           19                                         
+Covariance Type:               cluster                                         
+========================================================================================================
+                                           coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------
+Intercept                                1.5301      0.237      6.455      0.000       1.065       1.995
+C(team_id)[T.home-assistant/core]       -0.3906      0.241     -1.622      0.105      -0.863       0.081
+C(team_id)[T.kubernetes/kubernetes]     -0.4302      0.183     -2.352      0.019      -0.789      -0.072
+C(team_id)[T.langchain-ai/langchain]    -0.2892      0.241     -1.198      0.231      -0.762       0.184
+C(team_id)[T.microsoft/vscode]          -0.3838      0.250     -1.537      0.124      -0.873       0.106
+C(team_id)[T.open-webui/open-webui]     -0.4136      0.218     -1.899      0.058      -0.841       0.013
+C(team_id)[T.pytorch/pytorch]           -0.7844      0.180     -4.351      0.000      -1.138      -0.431
+C(team_id)[T.vercel/next.js]            -0.3970      0.179     -2.224      0.026      -0.747      -0.047
+C(week_index)[T.2]                       0.0250      0.091      0.274      0.784      -0.154       0.204
+C(week_index)[T.3]                      -0.0830      0.117     -0.712      0.476      -0.311       0.145
+C(week_index)[T.4]                      -0.0970      0.216     -0.448      0.654      -0.521       0.327
+C(week_index)[T.5]                      -0.1437      0.392     -0.367      0.714      -0.912       0.625
+C(week_index)[T.6]                       0.0585      0.145      0.404      0.686      -0.226       0.343
+C(week_index)[T.7]                       0.0315      0.042      0.746      0.456      -0.051       0.114
+C(week_index)[T.8]                      -0.2231      0.268     -0.831      0.406      -0.749       0.303
+C(week_index)[T.9]                      -0.0403      0.232     -0.174      0.862      -0.495       0.414
+C(week_index)[T.10]                     -0.1250      0.286     -0.438      0.662      -0.685       0.435
+C(week_index)[T.11]                     -0.4808      0.330     -1.459      0.145      -1.127       0.165
+treated                                 -0.0699      0.067     -1.036      0.300      -0.202       0.062
+log_total_output                        -0.0356      0.072     -0.498      0.619      -0.176       0.105
+==============================================================================
+Omnibus:                        0.240   Durbin-Watson:                   1.793
+Prob(Omnibus):                  0.887   Jarque-Bera (JB):                0.117
+Skew:                          -0.116   Prob(JB):                        0.943
+Kurtosis:                       2.939   Cond. No.                         69.7
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+[robust_winsorized_outcome]
+                                OLS Regression Results                                
+======================================================================================
+Dep. Variable:     junior_output_share_winsor   R-squared:                       0.467
+Model:                                    OLS   Adj. R-squared:                  0.223
+Method:                         Least Squares   F-statistic:                     2.418
+Date:                        Fri, 20 Mar 2026   Prob (F-statistic):              0.120
+Time:                                00:59:09   Log-Likelihood:                 15.138
+No. Observations:                          68   AIC:                             13.72
+Df Residuals:                              46   BIC:                             62.55
+Df Model:                                  21                                         
+Covariance Type:                      cluster                                         
+========================================================================================================
+                                           coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------
+Intercept                                1.3103      0.214      6.116      0.000       0.890       1.730
+C(team_id)[T.home-assistant/core]       -0.2261      0.179     -1.260      0.208      -0.578       0.126
+C(team_id)[T.kubernetes/kubernetes]     -0.1852      0.146     -1.273      0.203      -0.470       0.100
+C(team_id)[T.langchain-ai/langchain]    -0.1527      0.168     -0.909      0.363      -0.482       0.177
+C(team_id)[T.microsoft/vscode]          -0.2031      0.183     -1.110      0.267      -0.562       0.155
+C(team_id)[T.numpy/numpy]               -0.4069      0.162     -2.508      0.012      -0.725      -0.089
+C(team_id)[T.open-webui/open-webui]     -0.1444      0.181     -0.797      0.426      -0.500       0.211
+C(team_id)[T.pytorch/pytorch]           -0.5525      0.165     -3.356      0.001      -0.875      -0.230
+C(team_id)[T.vercel/next.js]            -0.3684      0.166     -2.223      0.026      -0.693      -0.044
+C(week_index)[T.2]                       0.0986      0.092      1.070      0.285      -0.082       0.279
+C(week_index)[T.3]                      -0.0085      0.072     -0.118      0.906      -0.150       0.133
+C(week_index)[T.4]                       0.0202      0.123      0.164      0.870      -0.222       0.262
+C(week_index)[T.5]                      -0.0270      0.150     -0.180      0.857      -0.320       0.266
+C(week_index)[T.6]                       0.0862      0.163      0.527      0.598      -0.234       0.407
+C(week_index)[T.7]                      -0.0208      0.172     -0.121      0.903      -0.357       0.316
+C(week_index)[T.8]                      -0.2063      0.214     -0.965      0.335      -0.625       0.213
+C(week_index)[T.9]                      -0.0301      0.147     -0.204      0.838      -0.319       0.259
+C(week_index)[T.10]                     -0.1556      0.207     -0.751      0.452      -0.562       0.250
+C(week_index)[T.11]                     -0.2655      0.210     -1.265      0.206      -0.677       0.146
+treated                                 -0.0729      0.096     -0.761      0.446      -0.261       0.115
+log_total_output                        -0.0323      0.066     -0.487      0.626      -0.162       0.098
+post_merge_bug_proxy_filled             -0.0258      0.016     -1.636      0.102      -0.057       0.005
+==============================================================================
+Omnibus:                       12.786   Durbin-Watson:                   2.162
+Prob(Omnibus):                  0.002   Jarque-Bera (JB):               17.152
+Skew:                          -0.751   Prob(JB):                     0.000189
+Kurtosis:                       4.949   Cond. No.                         73.5
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+[robust_placebo_lead]
+                             OLS Regression Results                            
+===============================================================================
+Dep. Variable:     junior_output_share   R-squared:                       0.528
+Model:                             OLS   Adj. R-squared:                  0.313
+Method:                  Least Squares   F-statistic:                     34.18
+Date:                 Fri, 20 Mar 2026   Prob (F-statistic):           2.41e-05
+Time:                         00:59:09   Log-Likelihood:                 19.291
+No. Observations:                   68   AIC:                             5.417
+Df Residuals:                       46   BIC:                             54.25
+Df Model:                           21                                         
+Covariance Type:               cluster                                         
+========================================================================================================
+                                           coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------
+Intercept                                1.4307      0.168      8.498      0.000       1.101       1.761
+C(team_id)[T.home-assistant/core]        0.0417      0.179      0.232      0.816      -0.310       0.394
+C(team_id)[T.kubernetes/kubernetes]     -0.1806      0.138     -1.309      0.190      -0.451       0.090
+C(team_id)[T.langchain-ai/langchain]     0.1083      0.164      0.660      0.509      -0.213       0.430
+C(team_id)[T.microsoft/vscode]           0.0361      0.174      0.207      0.836      -0.306       0.378
+C(team_id)[T.numpy/numpy]               -0.4024      0.157     -2.559      0.011      -0.711      -0.094
+C(team_id)[T.open-webui/open-webui]      0.1057      0.174      0.607      0.544      -0.236       0.447
+C(team_id)[T.pytorch/pytorch]           -0.3920      0.151     -2.594      0.009      -0.688      -0.096
+C(team_id)[T.vercel/next.js]            -0.3695      0.163     -2.269      0.023      -0.689      -0.050
+C(week_index)[T.2]                      -0.0571      0.083     -0.689      0.491      -0.220       0.105
+C(week_index)[T.3]                      -0.1607      0.054     -2.986      0.003      -0.266      -0.055
+C(week_index)[T.4]                      -0.0698      0.098     -0.710      0.478      -0.262       0.123
+C(week_index)[T.5]                      -0.0999      0.085     -1.182      0.237      -0.266       0.066
+C(week_index)[T.6]                      -0.0198      0.181     -0.109      0.913      -0.374       0.335
+C(week_index)[T.7]                      -0.1326      0.201     -0.660      0.509      -0.527       0.261
+C(week_index)[T.8]                      -0.3220      0.162     -1.993      0.046      -0.639      -0.005
+C(week_index)[T.9]                      -0.1288      0.118     -1.094      0.274      -0.359       0.102
+C(week_index)[T.10]                     -0.2647      0.180     -1.471      0.141      -0.617       0.088
+C(week_index)[T.11]                     -0.3766      0.161     -2.345      0.019      -0.691      -0.062
+treated                                 -0.3290      0.104     -3.158      0.002      -0.533      -0.125
+lead2_treated                           -0.4620      0.039    -11.775      0.000      -0.539      -0.385
+log_total_output                        -0.0390      0.068     -0.570      0.569      -0.173       0.095
+==============================================================================
+Omnibus:                       17.763   Durbin-Watson:                   2.306
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               36.915
+Skew:                          -0.809   Prob(JB):                     9.64e-09
+Kurtosis:                       6.227   Cond. No.                         67.5
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+[robust_high_output_subsample]
+                             OLS Regression Results                            
+===============================================================================
+Dep. Variable:     junior_output_share   R-squared:                       0.711
+Model:                             OLS   Adj. R-squared:                 -0.031
+Method:                  Least Squares   F-statistic:                     4.898
+Date:                 Fri, 20 Mar 2026   Prob (F-statistic):             0.0471
+Time:                         00:59:09   Log-Likelihood:                 17.563
+No. Observations:                   26   AIC:                             2.874
+Df Residuals:                        7   BIC:                             26.78
+Df Model:                           18                                         
+Covariance Type:               cluster                                         
+========================================================================================================
+                                           coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------
+Intercept                                1.3655      0.297      4.600      0.000       0.784       1.947
+C(team_id)[T.kubernetes/kubernetes]     -0.0830      0.398     -0.209      0.835      -0.863       0.697
+C(team_id)[T.langchain-ai/langchain]     0.0379      0.072      0.527      0.598      -0.103       0.179
+C(team_id)[T.microsoft/vscode]           0.0802      0.044      1.814      0.070      -0.006       0.167
+C(team_id)[T.numpy/numpy]               -0.0830      0.398     -0.209      0.835      -0.863       0.697
+C(team_id)[T.pytorch/pytorch]           -0.3683      0.114     -3.226      0.001      -0.592      -0.145
+C(team_id)[T.vercel/next.js]            -0.1865      0.394     -0.474      0.636      -0.958       0.585
+C(week_index)[T.3]                      -0.5124      0.171     -3.000      0.003      -0.847      -0.178
+C(week_index)[T.4]                      -0.3742      0.402     -0.931      0.352      -1.162       0.414
+C(week_index)[T.5]                      -0.5091      0.543     -0.937      0.349      -1.574       0.555
+C(week_index)[T.6]                      -0.2771      0.461     -0.601      0.548      -1.180       0.626
+C(week_index)[T.7]                      -0.4844      0.332     -1.459      0.145      -1.135       0.166
+C(week_index)[T.8]                      -1.0255      0.470     -2.180      0.029      -1.947      -0.104
+C(week_index)[T.9]                      -0.3837      0.462     -0.831      0.406      -1.289       0.522
+C(week_index)[T.10]                     -0.5211      0.629     -0.828      0.407      -1.754       0.712
+C(week_index)[T.11]                     -0.7075      0.392     -1.803      0.071      -1.476       0.061
+treated                                 -0.0263      0.355     -0.074      0.941      -0.722       0.669
+log_total_output                        -0.0031      0.124     -0.025      0.980      -0.245       0.239
+post_merge_bug_proxy_filled              0.0174      0.119      0.146      0.884      -0.216       0.251
+==============================================================================
+Omnibus:                        0.436   Durbin-Watson:                   2.991
+Prob(Omnibus):                  0.804   Jarque-Bera (JB):                0.026
+Skew:                          -0.068   Prob(JB):                        0.987
+Kurtosis:                       3.075   Cond. No.                         77.4
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)

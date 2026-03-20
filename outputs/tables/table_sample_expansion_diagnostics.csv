@@ -1,0 +1,4 @@
+sample,n_teams,n_team_weeks,switcher_count,adoption_timing_dispersion_sd,pretrend_supported_lead_bins,pretrend_support_cell_count,pretrend_event_m2_count,pretrend_event_m3_count
+old_q1_2025_expanded,9.0,68.0,5.0,1.6,2.0,2.0,1.0,1.0
+expanded_q2_2025_more_data,16.0,165.0,7.0,2.48746859276655,2.0,6.0,3.0,3.0
+delta_new_minus_old,7.0,97.0,2.0,0.8874685927665498,0.0,4.0,2.0,2.0
